@@ -9,16 +9,16 @@ local function refresh_workspace()
   BUILTIN_MONITOR = find_by_prefix(connected_monitors, "eDP-", "eDP-2")
 
   if current_monitor_mode() == NOTEBOOK_MODE then
-    hl.workspace_rule({ workspace = "name:gaming", monitor = BUILTIN_MONITOR, default = true })
-    hl.workspace_rule({ workspace = "1", monitor = BUILTIN_MONITOR, persistent = true })
+    hl.workspace_rule({ workspace = "1", monitor = BUILTIN_MONITOR, persistent = true, default = true })
     hl.workspace_rule({ workspace = "2", monitor = BUILTIN_MONITOR, persistent = true })
     hl.workspace_rule({ workspace = "3", monitor = BUILTIN_MONITOR, persistent = true })
+    hl.workspace_rule({ workspace = "name:gaming", monitor = BUILTIN_MONITOR })
   else
-    hl.workspace_rule({ workspace = "name:gaming", monitor = MONITOR2, default = true })
+    
     hl.workspace_rule({ workspace = "1", monitor = MONITOR1, persistent = true })
     hl.workspace_rule({ workspace = "2", monitor = MONITOR1, persistent = true })
     hl.workspace_rule({ workspace = "3", monitor = MONITOR1, persistent = true })
-    hl.workspace_rule({ workspace = "4", monitor = MONITOR2, persistent = true })
+    hl.workspace_rule({ workspace = "4", monitor = MONITOR2, persistent = true, default = true })
     hl.workspace_rule({ workspace = "5", monitor = MONITOR2, persistent = true })
     hl.workspace_rule({ workspace = "6", monitor = MONITOR2, persistent = true })
     hl.workspace_rule({ workspace = "7", monitor = MONITOR3, persistent = true })
@@ -28,6 +28,7 @@ local function refresh_workspace()
     hl.workspace_rule({ workspace = "10", monitor = BUILTIN_MONITOR, persistent = true })
     hl.workspace_rule({ workspace = "11", monitor = BUILTIN_MONITOR, persistent = true })
     hl.workspace_rule({ workspace = "12", monitor = BUILTIN_MONITOR, persistent = true })
+    hl.workspace_rule({ workspace = "name:gaming", monitor = MONITOR2 })
   
   end
 end
